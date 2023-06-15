@@ -1,0 +1,27 @@
+> AWS BEGINNER - PRACTICALS (PREFERRED TO BE DONE SEQUENTIALLY) : 
+
+1. create aws account -> set account alias name for easy login -> create IAM user (Admin grp) -> login using admin IAM user 
+2. attach policy to 2 grps and add admin user to both, attach inline policy specific to the admin user 
+3. INSTALL CLI on local system -> create access key and secret key for 'admin' user and using CLI : aws configure  --> aws iam list-users
+4. use aws cloudshell (CLI) -> can create/upload files as well 
+5. [IAM] download creds report and check admin's recently accessed services 
+6. enable budget/billing page for IAM Users (so admin user can view bills) , check free tier in "billing" sidepane to check usage ; create BUDGET alerts when 1)bill exceeds free tier 2) bill exceeds suppose 100rs for that month 
+7. create EC2 , Use user data script , configure web server on it ,configure security grp properly , use aws cli commands on it's cli without 'aws configure' by attaching IAM role (for ec2s to access other servicces) to it.
+8. TRY TO CREATE -> spot instance directly/ using spot fleet , reserved instances
+9. create Elastic IP -> ATTACH  to 1 instance, connect to it, attach to another instance and connect to it-> release elastic IP
+10. Placement grps -> cluster (high-performance) , spread (critical-grp) , partition (distributed-grp) 
+11. enable hibernation for EC2 (ebs encryption necessary) -> check uptime
+ime  
+12. create network eni (IN THE SAME AZ as Instances) and attach to 1 ec2, remove and attach to another ec2 
+13. create EBS Vol's snapshot , copy snapshot into another region. Also, create a new ebs vol from snapshot in other AZ of same region as snapshot.Use EBS recycle bin and ebs archieve feature.
+14. Create unencrypted EBS vol , now to encrypt it : create snapshot which will also be unencrypted -> create copy of that snapshot and ENCRYPT it -> create vol from that copied snapshot.
+15. Create security grp dedicated to an EFS , create an EFS vol (regional i.e. multi-AZ) and add FILE SYSTEM POLICY (read from documentation) 
+16. create a AMI with apache server installed. launch an EC2 from that AMI.
+
+19. create RDS mysql t2.micro - 1 master only -> connect using sqlelectron/Sqlyog -> create tables etc , create 1 read replica -> setup alarms for dbconnections and cpuutiliztion, check if we can enable PI and slow logs -->create DB (MANUAL) snapshot and delete RDS (note- disable deletion protection before deleting the db instances) --> restore to new db 
+
+20. store on-prem db data in AWS S3 -> [restore] create db using the backup file
+21. create aurora db , create 1 read replica, add autoscaling policy --> create manual snapshot -> delete db --> restore to a new aurora DB 
+22. try to connect aurora to AWS sagemaker/comprehend (SEARCH FOR AI PROJECT)
+23.  create Redis/memecache cluster 
+ 
